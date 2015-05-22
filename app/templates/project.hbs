@@ -1,1 +1,7 @@
-{{outlet}}
+<h2>{{model.name}}</h2>
+
+{{#link-to 'project.edit'}}Edit{{/link-to}}
+{{#link-to 'project.archive'}}Archive{{/link-to}}
+{{#link-to 'project.delete'}}Delete{{/link-to}}
+
+{{outlet 'sprints'}}

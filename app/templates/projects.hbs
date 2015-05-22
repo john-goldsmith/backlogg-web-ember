@@ -1,5 +1,11 @@
+{{#link-to 'projects.new'}}New Project{{/link-to}}
+
 <ul>
   {{#each project in model}}
-    <li>{{project.name}}</li>
+    <li>
+      {{#link-to 'project' project.id}}
+        {{project.name}}
+      {{/link-to}}
+    </li>
   {{/each}}
 </ul>

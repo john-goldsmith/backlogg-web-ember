@@ -1,1 +1,11 @@
-{{outlet}}
+Sprints
+
+<ul>
+  {{#each sprint in model}}
+    <li>
+      {{#link-to 'sprint' sprint.id}}
+        {{sprint.name}}
+      {{/link-to}}
+    </li>
+  {{/each}}
+</ul>
