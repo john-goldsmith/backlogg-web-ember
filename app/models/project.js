@@ -3,7 +3,8 @@ import DS from 'ember-data';
 var attr = DS.attr;
 
 export default DS.Model.extend({
-  // sprints: DS.hasMany('sprint'),
+
+  sprints: DS.hasMany('sprint'),
 
   name: attr('string'),
 
@@ -11,19 +12,19 @@ export default DS.Model.extend({
 
   code: attr('string'),
 
-  user_id: attr('number'),
+  userId: attr('number'),
 
-  is_active: attr('boolean', {
+  isActive: attr('boolean', {
     defaultValue: true
   }),
 
-  created_at: attr('date', {
+  createdAt: attr('date', {
     defaultValue: function() {
       return new Date();
     }
   }),
 
-  updated_at: attr('date', {
+  updatedAt: attr('date', {
     defaultValue: function() {
       return new Date();
     }
