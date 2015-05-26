@@ -9,11 +9,11 @@ export default Ember.Route.extend({
   },
 
   model: function() {
-    this.store.find('sprint');
+    return this.store.find('sprint');
   },
 
   setupController: function(controller, model) {
-    console.log();
+    controller.set('model', model);
   }
 
 });

@@ -12,7 +12,7 @@ export default Ember.Route.extend({
     return this.store.find('project', params.project_id);
   },
 
-  afterModel: function() {
+  afterModel: function(/*model, transition*/) {
     this.transitionTo('sprints');
   }
 
