@@ -9,7 +9,8 @@ export default Ember.Route.extend({
   },
 
   model: function() {
-    return this.store.find('sprint');
+    var project = this.modelFor('project');
+    return this.store.find('sprint', {project: project});
   },
 
   setupController: function(controller, model) {
