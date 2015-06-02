@@ -12,13 +12,13 @@ export default DS.Model.extend({
 
   slug: attr('string'),
 
-  startsAt: attr('data', {
+  startsAt: attr('date', {
     defaultValue: function() {
       return new Date();
     }
   }),
 
-  endsAt: attr('data', {
+  endsAt: attr('date', {
     defaultValue: function() {
       return new Date();
     }

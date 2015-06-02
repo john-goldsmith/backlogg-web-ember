@@ -38,6 +38,10 @@ var SprintAdapter = ApplicationAdapter.extend({
   // findMany: function(store, type, ids, snapshots) {},
 
   findQuery: function(store, type, query/*, recordArray*/) {
+    if (!query.project) {
+      throw new Error('Project is not defined: adapter:sprint');
+    }
+
     var url = this.host + '/' + this.namespace + '/projects/' + query.project.id + '/sprints';
     return new Ember.RSVP.Promise(function(resolve, reject) {
       Ember.$.getJSON(url).then(
@@ -50,7 +54,7 @@ var SprintAdapter = ApplicationAdapter.extend({
         }
       );
     });
-  },
+  }
 
   // generateIdForRecord: function(store, type, inputProperties) {},
 
