@@ -8,12 +8,9 @@ export default Ember.Route.extend({
     });
   },
 
-  model: function() {
-    var project = this.modelFor('project'),
-        sprints = this.store.find('sprint', {project: project});
-
-    this.store.pushMany('sprint', sprints);
-    return sprints;
+  model: function(/*params*/) {
+    var project = this.modelFor('project');
+    return project.get('sprints');
   },
 
   setupController: function(controller, model) {

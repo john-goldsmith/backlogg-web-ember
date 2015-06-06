@@ -1,1 +1,14 @@
-{{model.name}}
+Sprint {{model.name}}
+
+{{#link-to 'columns.new' 1 1}}New Column{{/link-to}}
+{{#link-to 'tasks.new' 1 1}}New Task{{/link-to}}
+
+{{!-- {{#each column in model}}
+  <ul>
+    {{#each task in column.tasks}}
+      <li>
+        {{task.title}}
+      </li>
+    {{/each}}
+  </ul>
+{{/each}} --}}

@@ -4,7 +4,7 @@ var attr = DS.attr;
 
 export default DS.Model.extend({
 
-  // sprints: DS.hasMany('sprint'),
+  sprints: DS.hasMany('sprint', {async: true}),
 
   name: attr('string'),
 

@@ -6,7 +6,7 @@ export default DS.Model.extend({
 
   project: DS.belongsTo('project'),
 
-  // columns: DS.hasMany('column'),
+  columns: DS.hasMany('column', {async: true}),
 
   name: attr('string'),
 
