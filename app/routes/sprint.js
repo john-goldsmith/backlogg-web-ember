@@ -9,12 +9,18 @@ export default Ember.Route.extend({
   },
 
   model: function(params) {
-    // TODO: Need to fetch columns and tasks at this point
-    return this.store.fetchById('sprint', params.sprint_id);
+    var model = {};
+
+    model.project = this.modelFor('project');
+    return this.store.find('sprint', params.sprint_id).then(function(sprint) {
+      model.sprint = sprint;
+      model.columns = sprint.get('columns');
+      return model;
+    });
   },
 
-  afterModel: function() {
-    // this.transitionTo('dashboard');
+  setupController: function(controller, model) {
+    controller.set('model', model);
   }
 
 });

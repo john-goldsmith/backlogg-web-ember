@@ -6,7 +6,7 @@ export default DS.Model.extend({
 
     sprint: DS.belongsTo('sprint'),
 
-    tasks: DS.hasMany('task', {async: true}),
+    tasks: DS.hasMany('task'),
 
     name: attr('string'),
 

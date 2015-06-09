@@ -1,0 +1,11 @@
+<h2>{{model.task.name}}</h2>
+
+<h3>Comments</h3>
+
+{{#if model.comments}}
+  {{#each model.comments as |comment|}}
+    <p>{{comment.user.screenName}} ({{comment.createdAt}}): {{comment.body}}</p>
+  {{/each}}
+{{else}}
+  <p>No comments</p>
+{{/if}}
