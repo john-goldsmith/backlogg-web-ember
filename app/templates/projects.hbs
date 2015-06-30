@@ -3,7 +3,7 @@
 {{#link-to 'projects.new'}}New Project{{/link-to}}
 
 <ul>
-  {{#each project in model}}
+  {{#each model as |project|}}
     <li>
       {{#link-to 'project' project.id}}
         {{project.name}}

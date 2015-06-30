@@ -6,7 +6,9 @@ export default DS.Model.extend({
 
   sprints: DS.hasMany('sprint', {async: true}),
 
-  name: attr('string'),
+  name: attr('string', {
+    defaultValue: 'New Project'
+  }),
 
   slug: attr('string'),
 

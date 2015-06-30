@@ -1,0 +1,16 @@
+<h2>{{model.name}} {{model.code}}</h2>
+
+Name
+{{input type="text" name="name" value=model.name}}
+
+Code
+{{input type="text" name="code" value=model.code}}
+
+Active?
+{{input type="checkbox" name="isActive" checked=model.isActive}}
+
+{{input type="hidden" name="userId" value=model.userId}}
+
+{{!-- {{input type="hidden" name="userId" value="1"}} --}}
+
+<button type="submit" {{action "createProject"}}>Create</button>

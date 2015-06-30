@@ -5,7 +5,7 @@
 {{#link-to 'project.delete'}}Delete Project{{/link-to}}
 
 <ul>
-  {{#each sprint in model}}
+  {{#each model as |sprint|}}
     <li>
       {{#link-to 'sprint' sprint.id}}
         {{sprint.name}}
