@@ -9,7 +9,13 @@ export default Ember.Route.extend({
   },
 
   model: function(params) {
-    return this.store.find('project', params.project_id);
+    return this.store.find('project', params.project_id)
+      .then(function(project) {
+        return project;
+      },
+      () => {
+        this.transitionTo('projects');
+      });
   },
 
   afterModel: function(/*model, transition*/) {

@@ -3,27 +3,23 @@ import Ember from 'ember';
 export default Ember.Route.extend({
 
   renderTemplate: function() {
-    this.render('projects.new', {
+    this.render('project.edit', {
       into: 'application'
     });
   },
 
   model: function() {
-    var project = this.store.createRecord('project');
+    var project = this.modelFor('project');
     project.set('userId', 1); // TODO
     return project;
   },
 
-  // setupController: function(controller, model) {
-  //   controller.set('model', model);
-  // },
-
   actions: {
 
-    createProject: function() {
+    updateProject: function() {
       this.currentModel.save().then(
-        function(/*project*/) {
-          this.transitionTo('projects');
+        function(project) {
+          this.transitionTo('project', project);
         }.bind(this),
         function(/*error*/) {
 

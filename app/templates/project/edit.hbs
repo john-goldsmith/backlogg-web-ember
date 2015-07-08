@@ -9,8 +9,8 @@ Code
 Active?
 {{input type="checkbox" name="isActive" checked=model.isActive}}
 
-{{input type="hidden" name="userId" value=model.userId}}
+{{!-- {{input type="hidden" name="userId" value=model.userId}} --}}
 
 {{!-- {{input type="hidden" name="userId" value="1"}} --}}
 
-<button type="submit" {{action "createProject"}}>Create</button>
+<button type="submit" {{action "updateProject"}}>Update</button>

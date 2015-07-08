@@ -11,10 +11,6 @@ export default Ember.Route.extend({
   model: function(/*params*/) {
     var project = this.modelFor('project');
     return project.get('sprints');
-  },
-
-  setupController: function(controller, model) {
-    controller.set('model', model);
   }
 
 });
